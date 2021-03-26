@@ -8,3 +8,6 @@ at the [getting started](./gettingstarted.md) guide.
 
 ## License
 The source code of fastfoodDataBase is distributed under the MIT license.
+
+## Contact
+The founders Brian and Sean can be contacted at fastfooddb@gmail.com
