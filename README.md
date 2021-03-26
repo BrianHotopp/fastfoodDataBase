@@ -1,5 +1,5 @@
 ## About
-This is the main repository for fastfoodDataBase
+This is the main repository for fastfooddatabase
 
 ## Contributing
 
