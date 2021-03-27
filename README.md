@@ -14,7 +14,7 @@ The source code of fastfoodDataBase is distributed under the [MIT license](./LIC
 
 ## Contact
 
-The founders Brian and Sean n kiara :) can be contacted at fastfooddb@gmail.com.
+The founders Brian and Sean can be contacted at fastfooddb@gmail.com.
 
 ## Code of Conduct
 
