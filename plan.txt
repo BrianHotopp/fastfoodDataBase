@@ -1,0 +1,17 @@
+make a vuejs frontend
+goals:
+
+allow user to look at single menu entry
+allow user to look at a single restaurant
+look at list of menu entries WITH CRITERIA
+DONE
+look at list of restaurants WITH CRITERIA
+DONE
+map each menu entry on the entries page to its single entry page with reviews and trust score etc
+map each restaurant to it's single page with a google maps map visualization
+figure out how I want to quarantine user contributed content
+
+eventually:
+add optional order by
+paginate results for the main page
+paginate results for the restaurants page
