@@ -148,22 +148,9 @@ ALTER TABLE ONLY public.trust_ratings
     ADD CONSTRAINT trust_ratings_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(user_id);
 
 
-CREATE VIEW menu_entries_complete AS
-SELECT 
-me.food_id, 
-me.name AS food_title,
-me.description, 
-me.price, 
-me.calories, 
-CAST(r.avg AS DOUBLE PRECISION) AS rating,
-me.restaurant_id, 
-re.name AS restaurant_name, 
-re.google_location AS restaurant_google_location, 
-me.creator_id, 
-us.first_name AS creator_first_name, 
-us.last_name AS creator_last_name,
-me.creation_date, 
-me.update_date 
+
+
+
 
 
 CREATE VIEW foodratings AS
@@ -172,6 +159,36 @@ FROM
 menuentries AS me 
 JOIN restaurants AS re2 ON me.restaurant_id = re2.restaurant_id 
 NATURAL LEFT OUTER JOIN (SELECT food_id, avg(rating) FROM food_ratings GROUP BY food_id) AS r;
+
+
+
+CREATE VIEW menu_entries_complete AS
+SELECT 
+me.food_id, 
+me.name AS food_title,
+me.description, 
+me.price, 
+me.calories, 
+r.rating,
+me.restaurant_id, 
+re.name AS restaurant_name, 
+re.google_location AS restaurant_google_location, 
+me.creator_id, 
+us.first_name AS creator_first_name, 
+us.last_name AS creator_last_name,
+me.creation_date, 
+me.update_date 
+FROM
+menuentries AS me
+JOIN 
+restaurants AS re 
+ON me.restaurant_id = re.restaurant_id
+JOIN users AS us
+ON us.user_id = me.creator_id
+LEFT JOIN foodratings AS r 
+ON me.food_id = r.food_id
+;
+
 
 CREATE VIEW rratings AS 
 SELECT restaurant_id, avg(rating) AS restaurant_rating

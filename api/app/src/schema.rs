@@ -66,9 +66,7 @@ table! {
         creation_date -> Timestamptz,
         update_date -> Timestamptz,
     }
-
 }
-
 table! {
     restaurants_complete (restaurant_id) {
         restaurant_id -> Int4,
