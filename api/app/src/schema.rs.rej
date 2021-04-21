@@ -1,0 +1,43 @@
+--- schema.rs.unpatched	2021-04-21 05:43:06.467089152 +0000
++++ schema.rs	2021-04-21 16:44:39.821688219 +0000
+@@ -46,12 +46,40 @@
+         last_name -> Nullable<Varchar>,
+         first_seen -> Timestamptz,
+         last_seen -> Timestamptz,
+     }
+ }
+ 
++table! {
++    menu_entries_complete (food_id) {
++        food_id -> Int4,
++        food_title -> Varchar,
++        description -> Varchar,
++        price -> Float8,
++        calories -> Int4,
++        rating -> Nullable<Float8>,
++        restaurant_id -> Int4,
++        restaurant_name -> Varchar,
++        restaurant_google_location -> Varchar,
++        creator_id -> Int4,
++        creator_username -> Nullable<Varchar>,
++        creation_date -> Timestamptz,
++        update_date -> Timestamptz,
++    }
++}
++table! {
++    restaurants_complete (restaurant_id) {
++        restaurant_id -> Int4,
++        name -> Varchar,
++        google_location -> Varchar,
++        creator_id -> Int4,
++        username -> Nullable<Varchar>,
++        restaurant_rating -> Nullable<Float8>,
++    }
++}
++
+ joinable!(food_ratings -> menuentries (food_id));
+ joinable!(food_ratings -> users (user_id));
+ joinable!(menuentries -> restaurants (restaurant_id));
+ joinable!(menuentries -> users (creator_id));
+ joinable!(restaurants -> users (creator_id));
+ joinable!(trust_ratings -> menuentries (food_id));

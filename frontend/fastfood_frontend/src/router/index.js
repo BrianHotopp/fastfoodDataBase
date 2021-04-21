@@ -6,6 +6,9 @@ import Restaurants from "../views/Restaurants.vue";
 import Restaurant from "../views/Restaurant.vue";
 import About from "../views/About.vue";
 import NotFoundComponent from "../components/NotFoundComponent.vue";
+import Profile from "../views/Profile.vue";
+import AddItem from "../views/AddItem.vue"
+import { authGuard } from "../auth/authGuard";
 Vue.use(VueRouter);
 
 const routes = [
@@ -38,6 +41,19 @@ const routes = [
     name: "About",
     component: About
   },
+  {
+  path: "/profile",
+  name: "profile",
+  component: Profile,
+  beforeEnter: authGuard
+  },
+  {
+  path: "/additem",
+  name: "additem",
+  component: AddItem,
+  beforeEnter: authGuard
+  },
+
   { path: '*', component: NotFoundComponent }
 ];
 
