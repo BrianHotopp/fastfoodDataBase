@@ -16,14 +16,22 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework import routers
 from fastfoodapi import views
-
+from fastfood.views import ReadMenuEntryViewSet 
+from fastfood.views import ReadRestaurantViewSet
+from django.contrib import admin
+from django.conf.urls import url
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-
+router.register(r'menuentries', ReadMenuEntryViewSet)
+router.register(r'restaurants', ReadRestaurantViewSet)
+# Uncomment the next two lines to enable the admin:
+admin.autodiscover()
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('admin/', admin.site.urls),
+
 ]

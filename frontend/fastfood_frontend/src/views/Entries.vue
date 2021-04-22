@@ -1,6 +1,6 @@
 <template>
   <div class="entries flex flex-col my-6 justify-start bg-white">
-    <section class="bg-myblue p-1 m-1 shadow-md">
+    <!-- <section class="bg-myblue p-1 m-1 shadow-md">
       <form class="flex flex-row p-3">
         <label for="sort">Sort By:</label>
         <select v-model="query_params.sortby" id="sort" name="sort">
@@ -17,8 +17,9 @@
 
       </form> 
 
-          </section>
-    <section> 
+          </section>-->
+    <section>  
+      {{api_response}}
       <ul class="flex flex-col">
         <li v-for="(entry,index) in entry_list" v-bind:key="index"><entry-list-item v-bind:item="entry"></entry-list-item> </li>
       </ul>
@@ -38,16 +39,8 @@ export default {
   },
   data(){
     return{
-      sort_options: ["price", "calories", "rating"],
-      show_options: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100],
+      api_response: null,
       entry_list: null,
-
-      query_params: {
-        sortby: "price",
-        revorder: false,
-        results: 20
-      },
-
     }
   },
   methods:{
@@ -56,10 +49,9 @@ export default {
     axios
     .get("http://localhost:8000/menuentries",
     {
-      params: this.query_params
     }
     )
-    .then(response => (this.entry_list = response.data))
+    .then(response => (this.entry_list = response.data.results, this.api_response = response))
     .catch(error => {console.log(error);});
     }
   },

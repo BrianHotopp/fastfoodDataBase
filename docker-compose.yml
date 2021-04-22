@@ -13,6 +13,7 @@ services:
             POSTGRES_PASSWORD: agoodpassword    # put your superuser database password this here
             POSTGRES_USER: userdb
             POSTGRES_DB: rocketdb
+        command: "python api/manage.py runserver 0.0.0.0:8000"
         depends_on:
           - database
     frontend:

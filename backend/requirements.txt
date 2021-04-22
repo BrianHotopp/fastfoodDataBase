@@ -6,3 +6,4 @@ djangorestframework
 djangorestframework-jwt
 cryptography
 python-jose
+django-cors-headers

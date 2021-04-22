@@ -3,6 +3,8 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from fastfoodapi.serializers import UserSerializer, GroupSerializer
 
+from rest_framework.decorators import api_view
+from django.http import HttpResponse
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -20,3 +22,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+# def public(request):
+#     return HttpResponse("You don't need to be authenticated to see this")
+
+
+# @api_view(['GET'])
+# def private(request):
+#     return HttpResponse("You should not see this message if not authenticated!")
