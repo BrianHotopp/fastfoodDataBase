@@ -5,6 +5,7 @@ import Entry from "../views/Entry.vue";
 import Restaurants from "../views/Restaurants.vue";
 import Restaurant from "../views/Restaurant.vue";
 import About from "../views/About.vue";
+import AboutMe from "../views/AboutMe.vue";
 import NotFoundComponent from "../components/NotFoundComponent.vue";
 import Profile from "../views/Profile.vue";
 import AddItem from "../views/AddItem.vue"
@@ -40,6 +41,11 @@ const routes = [
     path: "/about",
     name: "About",
     component: About
+  },
+  {
+    path: "/aboutme",
+    name: "AboutMe",
+    component: AboutMe
   },
   {
   path: "/profile",
