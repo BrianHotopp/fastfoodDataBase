@@ -1,19 +1,20 @@
 <template>
-    <div class="entries flex flex-col my-6 justify-start bg-white">
-    <section class="bg-myblue p-1 m-1 shadow-md">
+  <div class="entries flex flex-col my-6 justify-start font-buttonfont font-semibold">
+    <section class="bg-myorange+1 p-1 m-1 shadow-md rounded-md">
       <form class="flex flex-row p-3">
-        <label for="sort">Sort By:</label>
-        <select v-model="query_params.sortby" id="sort" name="sort">
+        <label for="sort" class='px-2'>Sort By:</label>
+        <select v-model="query_params.sortby" id="sort" name="sort" class='rounded bg-myorange+3'>
           <option v-for="item in sort_options" :key="item">{{item}}</option>
         </select>
 
-        <label for="show">Show:</label>
-        <select v-model="query_params.results" id="show" name="show" class="">
+        <label for="show" class='px-2'>Show:</label>
+        <select v-model="query_params.results" id="show" name="show" class='rounded bg-myorange+3'>
           <option v-for="item in show_options" :key="item">{{item}}</option>
         </select>
-        <label for="revorder">Reverse Order</label>
+        <label for="revorder" class='px-2'>Reverse Order</label>
         <input v-model="query_params.revorder" type="checkbox" id="revorder">
-        <button v-on:click.prevent="hit_db()" class="bg-white">Apply</button>
+        <p class='px-5'></p>
+        <button v-on:click.prevent="hit_db()" class="bg-myorange+3 rounded px-2 text-black border border-black hover:bg-myorange+4 font-semibold">Apply</button>
 
       </form> 
 

@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-row p-1 m-1 bg-white shadow-md">
+    <div class="flex flex-row p-1 m-1 bg-myorange+2 shadow-md rounded-md font-buttonfont font-normal font-white">
         <div class="flex flex-col">
             <div>
-                <p class="px-3">{{item.food_title}}</p>
+                <p class="px-3 font-semibold">{{item.food_title}}</p>
             </div> 
             <div class="flex flex-row">
                 <p class="px-3">{{item.restaurant_name}}</p>
