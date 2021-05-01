@@ -1,10 +1,10 @@
 <template>
-  <div class="entries flex flex-col my-6 justify-start bg-white">
+  <div class="entries flex flex-col my-6 justify-start bg-bgcolor+1 rounded-md">
    <form id="demo">
   <!-- text -->
-  <p>
-    <input type="text" v-model="msg">
-    {{msg}}
+  <p class="px-5 py-3">
+    <label for='itemname' class='font-buttonfont font-medium text-myorange'>Item Name:</label><br>
+    <input v-model="msg" type="text" id="itemname" class='font-buttonfont font-medium text-myorange bg-bgcolor border border-black rounded-md'><br>
   </p>
   <!-- checkbox -->
   <p>
@@ -34,7 +34,9 @@
     </select>
     {{multiSelect}}
   </p>
-  <p><pre>data: {{$data | json 2}}</pre></p>
+  <div class="px-2 py-10">
+  <p class='font-buttonfont font-semibold text-myorange'>Raw Data<br><pre class="bg-bgcolor text-white rounded-md text-base font-normal">{{$data | json 2}}</pre></p>
+  </div>
 </form> 
     
 
@@ -49,7 +51,7 @@ export default {
   },
   data(){
       return{
-        msg      : 'hi!',
+        msg      : '',
         checked  : true,
         picked   : 'one',
         selected : 'two',

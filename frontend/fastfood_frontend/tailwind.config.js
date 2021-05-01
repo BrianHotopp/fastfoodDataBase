@@ -41,6 +41,7 @@ module.exports = {
       'myyellow': '#ffda77',
       'mywhite': '#fbf6f0',
       'myblue': '#aee6e6',
+      'gray': '#c4c4c4',
     },
         extend: {},
   },
