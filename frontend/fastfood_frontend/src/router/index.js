@@ -8,7 +8,8 @@ import About from "../views/About.vue";
 import AboutMe from "../views/AboutMe.vue";
 import NotFoundComponent from "../components/NotFoundComponent.vue";
 import Profile from "../views/Profile.vue";
-import AddItem from "../views/AddItem.vue"
+import AddItem from "../views/AddItem.vue";
+import EditProfile from "../views/EditProfile.vue";
 import { authGuard } from "../auth/authGuard";
 Vue.use(VueRouter);
 
@@ -59,7 +60,12 @@ const routes = [
   component: AddItem,
   beforeEnter: authGuard
   },
-
+  {
+    path: "/editprofile",
+    name: "editprofile",
+    component: EditProfile,
+    beforeEnter: authGuard
+    },
   { path: '*', component: NotFoundComponent }
 ];
 

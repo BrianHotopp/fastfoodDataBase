@@ -19,7 +19,7 @@
         </div>
         <ul class="p-3 flex justify-left">
           <li class="py-1 px-5 my-1 mr-1 rounded-md flex flex-col justify-center hover:bg-myorange+1 bg-myorange font-buttonfont font-semibold">
-            <router-link to="/editprofile">Edit Profile</router-link>
+            <router-link to="/profile">Save and Exit</router-link>
           </li>
         </ul>
       </div>
